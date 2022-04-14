@@ -74,7 +74,8 @@ p {
   font-family: 'Mitr', sans-serif;
   font-weight: bold;
   font-size: 20px;
-  padding: 0.31rem 1rem;
+  padding-bottom: 0.15em;
+  padding-top: 0.3em;
 }
 
 .btn.check:hover {
@@ -342,31 +343,27 @@ p {
 .images {
   width: 250px;
   height: 400px;
-  margin: 0em;
+  margin: 10px;
   padding: 0em;
+  border-radius: 5px;
 }
 
 .u-imagen {
   list-style: none;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: flex-start;
   padding: 0;
 }
 
 .img-container {
-  margin: 0.01em;
-  border-style: solid;
+  margin: 1em;
+  border-bottom: solid;
   border-color: #f0f0f0;
   border-width: 1px;
-  padding: 0em;
+  padding-bottom: 1em;
   float: left;
-}
-
-.img-title{
-  margin: 0;
-  padding: 0;
 }
 
 .img-btn {
@@ -379,18 +376,11 @@ p {
   position: absolute;
 }
 
-.image-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
 .description {
   font-size: 14px;
   width: 250px;
   margin-top: 1px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   font-family: 'Mitr', sans-serif;
   color:#444444;
 }
@@ -402,8 +392,8 @@ p {
   justify-content: flex-start;
   align-items: center;
   margin-left: 5px;
-  margin-bottom: 2px;
-  margin-top: 2px;
+  margin-bottom: 5px;
+  margin-top: 15px;
   color: #444444;
 }
 
@@ -415,7 +405,6 @@ p {
   padding: 0;
   background: none;
   border: none;
-  border-bottom: 1px dashed #999999;
   outline: none;
 }
 
@@ -457,10 +446,13 @@ p {
   padding: 0;
   background: none;
   border: none;
-  border-bottom: 1px dashed #999999;
   outline: none;
 }
-
+.image-edit-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 .image-title_input--active{
   border-bottom: 1px solid #666666;
   text-align: left;
@@ -519,7 +511,7 @@ p {
 .intro-container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 100px;
   background-color: white;
   width: 450px;
   padding-top: 0;
@@ -528,7 +520,7 @@ p {
   border-style: solid;
   border-color: #e7e7e7;
   border-width: 1px;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 h2 {

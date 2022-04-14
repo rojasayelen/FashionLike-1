@@ -9,7 +9,13 @@ var PosteoSchema = Schema({
     file: {type: String, required: true},
     likes: {type: Number},
     dislikes: {type: Number},
-    //date: {type: date, required: true}
-});
+    dateCreate: {type: Date},
+    dateModify: {type: Date}
+    },
+    {
+    timestamps: true, //es para manejar tiempos: createdAt y updatedAt
+    versionKey: false //para trabajar la versión en mongoose
+    }
+);
 
 module.exports = mongoose.model('Posteo', PosteoSchema);

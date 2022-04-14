@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//const cors = require('cors');
+const cors = require('cors');
 
 const app = express();
-//app.use(cors());
+app.use(cors());
 
+app.options('*', cors());
 
 //require('dotenv').config();
 
@@ -12,6 +13,7 @@ const app = express();
 var user_routes = require('./routes/user');
 var posteo_routes = require('./routes/posteo');
 app.use("/", user_routes);
+app.use("/", posteo_routes);
 
 //configuración del body-parser
 app.use(bodyParser.urlencoded({extended:false}));

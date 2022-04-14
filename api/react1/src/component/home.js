@@ -19,7 +19,7 @@ export default function Index () {
             <div className="intro-container">
                 <div>
                     <div className="intro">
-                        <h1>Bienvenido a <strong>FASHION LIKE</strong></h1>
+                        <h1>Bienvenido a <br/><strong>FASHION IKE</strong></h1>
                     </div>
                 <LoginRegister/>
                 <Routes>

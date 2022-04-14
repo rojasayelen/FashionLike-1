@@ -29,7 +29,7 @@ export default function OptionsMenu () {
             <nav ref={dropDown} className={`menu ${isActive ? 'active' : 'inactive'}`}>
                 <ul>
                   <li>
-                    <a href="/aboutAdmin" className="">
+                    <a href="/about" className="">
                       <FaHouseUser className="icon"/>
                       <span>About</span>
                     </a>

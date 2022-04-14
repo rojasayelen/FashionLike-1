@@ -9,7 +9,7 @@ import {
 
 import '../App.css';
 
-import {FaHouseUser} from "react-icons/fa"
+import {FaHouseUser, FaCameraRetro} from "react-icons/fa"
 
 import RegisterForm from './register';
 import LoginForm from './Login'
@@ -36,6 +36,12 @@ export default function App () {
               <div  className='title'>
                 <span>FASHION LIKE</span>
               </div>
+              <div className="li-login">
+                  <Link to="/imagesUser" className={`btn-header--${!editing ? "active" : "hidden"}`}>
+                  <FaCameraRetro className="icon"/>
+                  <span>Participá</span>
+                  </Link>
+              </div>  
               <div className='float-right'>
                 <span className='btn btn-header'>
                     <OptionsMenu className="icon"/>

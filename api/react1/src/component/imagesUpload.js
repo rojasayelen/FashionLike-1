@@ -8,26 +8,17 @@ export const ImageUpload = () => {
     const {register, resetField, handleSubmit, setError, clearErrors, formState: {errors}} = useForm();
 
     const onSubmit = (data, e) => {
-        e.target.reset();
-        if (!data.image + !data.url && data.image + data.url) {
-             setError("fillAtLeastOne", {
-                type: "manual",
-                message: "Debe completar al menos 1 campo"
-            })
-            
-            
-        } else{
-            if (!data.image + data.url && data.image + !data.url) {
-                console.log(data)
-                e.target.reset();
-            }
-        }
+        //e.target.reset();
         
-        // axios.post("http://localhost:3977/", data)
-        //     .then(res => console.log(res.data))
-        //     .catch(err => {
-        //         console.log(err);
-        //     });
+        console.log(data);
+        
+    //     axios.post("http://localhost:3977/posteo", data)
+    //         .then(res => console.log(res.data))
+    //         .catch(err => {
+    //         debugger;
+    //             console.log(err);
+    //         });
+    // 
     }   
 
    
@@ -38,11 +29,13 @@ export const ImageUpload = () => {
                 <form className="form-c" onSubmit={handleSubmit(onSubmit)}>
                 <input
                     type="file"
-                    name="image"
+                    name="file"
                     placeholder="Subir Imagen..."
                     className="form file"
-                    id="image" 
-                    {...register("image")}
+                    id="file" 
+                    {...register("file", {
+                        required: {value: true, message:"Debe seleccionar un archivo"},
+                    })}
                     onChange={() => clearErrors("fillAtLeastOne")}
                 />
                 <input

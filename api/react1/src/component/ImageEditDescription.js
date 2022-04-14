@@ -1,47 +1,28 @@
-import React, { useRef, useState } from "react";
-import useKeypress from "react-use-keypress";
+import React, { useRef } from "react";
 
 function EditDescription (props) {
         
     const inputRef = useRef();
 
-    const { i, text, editing, isInputActive, setIsInputActive, setEditing, activeIndex } = props;
+    const { i, setInputDescription, setNewDescription, inputDescription, text, isInputActive, activeIndex } = props;
     
-    const [inputValue, setInputValue] = useState(text)
-
-    const [ storedDescription, setNewDescription ] = useState(text);
-
-    const handleImputChange = (e) => {
-        setInputValue(e.target.value);
-        setNewDescription(e.target.value);
+    const handleImputChange = () => {
+        setInputDescription(inputRef.current.value);
+        setNewDescription(inputRef.current.value)
     }
-    
-    const startEditing = (index) => {
-        let edit = [editing];
-        let start = edit[index];
-        start = true;
-        edit[index] = start
-        setIsInputActive(edit);
-    }
-
-    useKeypress('Enter', () => {
-        setEditing(false);
-        setIsInputActive(false);
-    });
 
     return (
-        <span>
+        <span className="image-edit-container">
             <span
-                onClick={() => startEditing(i)} 
-                className={`image-text_copy--${editing && activeIndex === i ? "active" : "normal"} image-text_copy--${isInputActive && activeIndex === i ? "hidden" : "active"}`}
+                className={`image-text_copy--${isInputActive && activeIndex === i ? "hidden" : "active"}`}
             >
-                {storedDescription}
+                {text}
             </span>
             <textarea
                 ref={inputRef}
                 className={`image-text_input image-text_input--${isInputActive && activeIndex === i ? "active" : "hidden"}`}
-                value={inputValue}
-                onChange={(e) => handleImputChange(e)}
+                value={inputDescription}
+                onChange={(e) => handleImputChange(e, i)}
             ></textarea>
         </span>
     );

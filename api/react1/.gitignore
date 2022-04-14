@@ -23,5 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # component
-/src/component/ImagesModal.js
-/src/component/ImagesAdmin.js
+/src/component/AboutAdmin.js
+/src/component/aboutEdit.js
+/src/component/homeAdmin.js
+/src/component/homeEdit.js
+/src/component/OptionsMenu.js
+/src/component/practica1.html

@@ -15,8 +15,6 @@ import RegisterForm from './register';
 import LoginForm from './Login'
 import OptionsMenu from './OptionsMenuAdmin'
 import AdminImages from './ImagesAdmin';
-import AboutAdmin from './AboutAdmin';
-import IndexAdmin from './homeAdmin';
 
 export default function App () {
   
@@ -28,7 +26,7 @@ export default function App () {
             <nav>
               <div className='float-left'>
                 <span>
-                    <Link to="/homeAdmin" className="btn btn-header float-left">
+                    <Link to="/home" className="btn btn-header float-left">
                       <FaHouseUser className="icon"/>
                     </Link>
                 </span>  
@@ -49,8 +47,8 @@ export default function App () {
             <Route path="/login" element={<LoginForm/>}/>
             <Route path="/register" element={<RegisterForm/>}/>
             <Route path="/imagesAdmin" element={<AdminImages/>}/>
-            <Route path="/aboutAdmin" element={<AboutAdmin/>}/>
-            <Route path="/homeAdmin" element={<IndexAdmin/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/home" element={<Index/>}/>
           </Routes>
       </div>
     </Router> 

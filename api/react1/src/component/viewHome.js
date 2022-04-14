@@ -27,7 +27,7 @@ export default function App () {
             <nav>
               <div className='float-left'>
                 <span>
-                    <Link to="/homeAdmin" className="btn btn-header float-left">
+                    <Link to="/home" className="btn btn-header float-left">
                       <FaHouseUser className="icon"/>
                     </Link>
                 </span>  

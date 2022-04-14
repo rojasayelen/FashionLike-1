@@ -11,14 +11,14 @@ function savePosteo(req, res) {
     
     var params = req.body;
     
-    //console.log(params);
+    console.log(params);
 
-    posteo.name = params.name;
+    posteo.title = params.title;
     posteo.description = params.description;
     posteo.file = params.file;
     posteo.likes = null;
     posteo.dislikes = null;
-    posteo.date = 
+    //posteo.date = 
 
     posteo.save((err, posteoStored) => {
         if(err){

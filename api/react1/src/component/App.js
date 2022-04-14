@@ -10,16 +10,13 @@ import {
 import '../App.css';
 
 import {FaHouseUser} from "react-icons/fa"
-
 import RegisterForm from './register';
 import LoginForm from './Login'
 import Index from './home'
-import OptionsMenu from './OptionsMenu'
+import OptionsMenu from './OptionsMenuIndex'
 import About from './About'
 import UserImages from './ImagesUser'
 import AdminImages from './ImagesAdmin';
-import AboutAdmin from './AboutAdmin';
-import IndexAdmin from './homeAdmin';
 
 export default function App () {
   
@@ -30,7 +27,7 @@ export default function App () {
             <nav>
               <div className='float-left'>
                 <span>
-                    <Link to="/homeAdmin" className="btn btn-header float-left">
+                    <Link to="/home" className="btn btn-header float-left">
                       <FaHouseUser className="icon"/>
                     </Link>
                 </span>  
@@ -44,8 +41,6 @@ export default function App () {
                 </span>
               </div>
             </nav>
-
-            
           </header>
           <Routes>
             <Route path="/login" element={<LoginForm/>}/>
@@ -54,8 +49,6 @@ export default function App () {
             <Route path="/home" element={<Index/>}/>
             <Route path="/imagesUser" element={<UserImages/>}/>
             <Route path="/imagesAdmin" element={<AdminImages/>}/>
-            <Route path="/aboutAdmin" element={<AboutAdmin/>}/>
-            <Route path="/homeAdmin" element={<IndexAdmin/>}/>
           </Routes>
       </div>
     </Router> 
