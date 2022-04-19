@@ -1,11 +1,10 @@
+'use strict'
 var bcrypt = require('bcrypt');
 var User = require('../models/user');
+const saltRounds = 10;
 var jwt = require('../services/jwt');
-var fs = require('fs');
-var path = require('path');
 
-function saveUser(req, res) {
-        
+function saveUser(req, res) {     
     var user = new User(); // creamos la instancia de un admin
 
     var params = req.body;
@@ -15,16 +14,17 @@ function saveUser(req, res) {
     user.name = params.name;
     user.surname = params.surname;
     user.email = params.email;
-    user.role = 'ROLE_USER';
+    user.role = params.role;
     
     if(params.password){
         //encripta contraseña 
        
-        bcrypt.hash(params.password, 10, function(err, hash){
+        bcrypt.hash(params.password, saltRounds, function(err, hash){
            user.password = hash;
+
             if(user.name != null && user.surname != null && user.email != null){
                 // guardar el usuario
-                console.log(hash)
+                console.log(hash) //No lo tengo - Aye
                 user.save((err, userStored) =>{
                     if(err){
                         console.log(err);
@@ -43,8 +43,7 @@ function saveUser(req, res) {
         })
     }else{
         res.status(200).send({message:'debe ingresar contraseña'})  
-    }
-    
+    }   
 };
 
 function loginUser(req, res){
@@ -65,7 +64,9 @@ function loginUser(req, res){
                     if(check){
                         //devolver los datos del usuario logueado
                         if(params.gethash){
-                              //devolver un token de jwt  
+                              //devolver un token de jwt 
+                              res.status(200).send({token: jwt.createToken(user)
+                            }); 
                         }else{
                             res.status(200).send({user});
                         }
